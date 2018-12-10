@@ -1,5 +1,5 @@
 
- def docker(load.Dockerfile)  
+ def docker = load.("Dockerfile")  
 def call(Map config) {
     pipeline {
         agent any
