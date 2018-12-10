@@ -5,9 +5,8 @@ def call(Map config) {
 stage('Checkout'){
   
    checkout scm
- $GIT_BRANCH
- branch=$GIT_BRANCH
- branch
+ 
+scm.GIT_BRANCH
 
  sh 'git remote -v '
 }
