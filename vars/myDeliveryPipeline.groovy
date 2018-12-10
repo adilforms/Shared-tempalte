@@ -6,7 +6,7 @@ stage('Checkout'){
   
    checkout scm
 
-sh ' git log --format="%H" -n 1'
+sh ' git rev-parse HEAD"
 }
 stage('Build'){
 
