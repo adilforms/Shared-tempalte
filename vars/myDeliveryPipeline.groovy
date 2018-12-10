@@ -41,9 +41,7 @@ stage('Test'){
      cathc(e) {
       sh 'echo failure'
      }
-     finally {
-     sh ' echo env.REPO_URL'
-     }
+     
    }
    /*
 sh '''#!/bin/bash -el
