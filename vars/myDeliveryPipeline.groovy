@@ -6,7 +6,7 @@ stage('Checkout'){
   
    checkout scm
 
- echo  'GIT_COMMIT %GIT_COMMIT%'
+ echo  GIT_COMMIT %GIT_COMMIT%
 }
 stage('Build'){
 
