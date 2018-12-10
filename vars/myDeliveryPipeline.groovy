@@ -29,7 +29,7 @@ stage('Test'){
   
 }
     stage('Publish') {
-  steps {
+  
    def environment = branch_to_environment()[env.BRANCH_NAME]
    if(environment != null) {
     try {
@@ -55,7 +55,7 @@ sh '''#!/bin/bash -el
    docker push adilforms/the-example-app.nodejs  
    '''
    */
-  }
+  
 }
 }
 }
