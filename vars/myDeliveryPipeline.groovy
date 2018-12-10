@@ -28,7 +28,7 @@ stage('Build'){
 stage('Test'){ 
     steps {
   
-    'version'
+   echo 'version'
     
   
   }
