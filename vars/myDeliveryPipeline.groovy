@@ -1,8 +1,3 @@
-def dock() {
-    Map Dockerfile = read{file: "${WORKSPACE}/Dockerfile"
-                          
-    return Dockerfile
-}
 
 def call(Map config) {
     pipeline {
@@ -43,6 +38,12 @@ stage('Test'){
 }
     stage('Publish') {
   steps {
+      def dock() {
+    Map Dockerfile = read{file: "${WORKSPACE}/Dockerfile"
+                          
+    return Dockerfile
+}
+
     
     sh '''#!/bin/bash -el
     echo 'publishing'
