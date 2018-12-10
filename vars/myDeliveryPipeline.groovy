@@ -5,8 +5,8 @@ def call(Map config) {
 stage('Checkout'){
   
    checkout scm
- commitId: env.GIT_COMMIT
- echo '$commitID'
+
+ echo  'GIT_COMMIT %GIT_COMMIT%'
 }
 stage('Build'){
 
