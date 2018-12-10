@@ -23,7 +23,7 @@ stage('Publish') {
    
 sh '''#!/bin/bash -el
     echo 'publishing'
-   version=git rev-parse --short HEAD
+   version=$(git rev-parse --short HEAD)
     
     
    docker build -t adilforms/the-example-app.nodejs.$version .
