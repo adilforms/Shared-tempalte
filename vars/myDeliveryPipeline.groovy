@@ -25,10 +25,11 @@ stage('Publish') {
 sh '''#!/bin/bash -el
     echo 'publishing'
    version=$(git rev-parse --short HEAD)
+   branch=$BRANCH_NAME
       
     
-   docker build -t adilforms/the-example-app.nodejs.$version:master .
-   docker push adilforms/the-example-app.nodejs.$version:master
+   docker build -t adilforms/the-example-app.nodejs.$version:$branch.
+   docker push adilforms/the-example-app.nodejs.$version:$branch
    '''
    
 }
