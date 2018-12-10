@@ -43,7 +43,7 @@ stage('Test'){
     Map Dockerfile = read{file: "${WORKSPACE}/Dockerfile"
                       return Dockerfile
                          }
-              catch {
+              catch(e) {
                   exit(1);
               }
 }
