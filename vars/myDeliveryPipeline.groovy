@@ -1,4 +1,4 @@
-def call() {
+def dock() {
     Map Dockerfile = read{file: "${WORKSPACE}/Dockerfile"
                           
     return Dockerfile
