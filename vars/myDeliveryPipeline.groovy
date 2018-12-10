@@ -5,18 +5,19 @@ def call(Map config) {
 stages {
 stage('Checkout'){
   steps{
-
+/*
       checkout([$class: 'GitSCM',
             
           extensions: [[$class: 'CleanBeforeCheckout']], 
                 commitID: [[version: env.GIT_COMMIT]]
                          
                         ])
-  /*
+ 
       checkout([$class:'GitSCM', branches: "**"])
+      */
       
       checkout scm
-      */
+      
   }
 }
 stage('Build'){
