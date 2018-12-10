@@ -1,26 +1,14 @@
  
 def call(Map config) {
     pipeline {
-     agent {
-      docker { image 'node:7-alpine'
-             }
-     }
+     agent any
         
 stages {
 stage('Checkout'){
   steps{
-/*
-      checkout([$class: 'GitSCM',
-            
-          extensions: [[$class: 'CleanBeforeCheckout']], 
-                commitID: [[version: env.GIT_COMMIT]]
-                         
-                        ])
- 
-      checkout([$class:'GitSCM', branches: "**"])
-      */
       
    checkout scm
+   sh 'echo GIT_COMMIT %GIT_COMMIT%'
       
   }
 }
