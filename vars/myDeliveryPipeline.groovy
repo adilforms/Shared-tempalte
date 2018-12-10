@@ -8,8 +8,7 @@ stage('Checkout'){
   steps{
       
    checkout scm
-   shortCommit = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
-   shortCommit
+ env
       
   }
 }
