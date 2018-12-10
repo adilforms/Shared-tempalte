@@ -28,7 +28,7 @@ sh '''#!/bin/bash -el
    branch=$BRANCH_NAME
       
     
-   docker build -t adilforms/the-example-app.nodejs.$version:$branch.
+   docker build -t adilforms/the-example-app.nodejs.$version:$branch .
    docker push adilforms/the-example-app.nodejs.$version:$branch
    '''
    
