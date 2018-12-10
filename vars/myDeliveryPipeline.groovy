@@ -33,7 +33,7 @@ stage('Test'){
    def environmnet = branch_to_environment()[env.BRANCH_NAME]
    if(environmnet != null) {
     try {
-     if environment ==' master') {
+     if (environment ==' master') {
       sh 'echo master'
       sh ' ehco env.BUILD_NUMBER'
      }
