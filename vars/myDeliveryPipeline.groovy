@@ -1,8 +1,10 @@
-
- def docker = load.("Dockerfile")  
+ 
 def call(Map config) {
     pipeline {
-        agent any
+     agent {
+      Docker {
+       FROM node:7 }
+     }
         
 stages {
 stage('Checkout'){
