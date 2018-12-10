@@ -7,6 +7,7 @@ stage('Checkout'){
    checkout scm
 
 sh 'git rev-parse --short HEAD'
+ sh 'git remote -v '
 }
 stage('Build'){
 
