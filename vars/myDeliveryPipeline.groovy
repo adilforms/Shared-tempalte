@@ -39,7 +39,7 @@ stage('Test'){
 }
     stage('Publish') {
   steps {
-   docker()
+   echo 'docker()'
     
     sh '''#!/bin/bash -el
     echo 'publishing'
