@@ -6,7 +6,7 @@ stage('Checkout'){
   
    checkout scm
 
- echo  GIT_COMMIT %GIT_COMMIT%
+sh ' git log --format="%H" -n 1'
 }
 stage('Build'){
 
