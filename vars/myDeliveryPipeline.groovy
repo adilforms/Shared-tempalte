@@ -27,6 +27,7 @@ stage('Checkout'){
 stage('Build'){
   steps {
     echo 'building'
+   sh 'npm config set unsafe-perm=true'
    sh 'npm install'
   }
 }
