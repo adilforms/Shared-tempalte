@@ -1,10 +1,7 @@
  
 def call(Map config) {
     pipeline {
-     agent {
-      Docker {
-       FROM node:7 }
-     }
+     agent any
         
 stages {
 stage('Checkout'){
