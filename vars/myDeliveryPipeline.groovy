@@ -45,6 +45,12 @@ sh '''#!/bin/bash -el
 }
 }
 }
+def branch_to_environment(){
+ [
+  master: 'master',
+  test: 'test'
+  ]
+}
 
 
 
