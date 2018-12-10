@@ -16,7 +16,7 @@ stage('Checkout'){
       checkout([$class:'GitSCM', branches: "**"])
       */
       
-    checkout([$class:'GitSCM', branches: "**", $class: 'CleannBeforeCheckout'])
+   checkout scm
       
   }
 }
