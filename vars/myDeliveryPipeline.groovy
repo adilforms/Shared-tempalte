@@ -41,15 +41,9 @@ stage('Test'){
 }
     stage('Publish') {
   steps {
-   echo 'docker()'
-    
-    sh '''#!/bin/bash -el
-    echo 'publishing'
-   
-    docker build -t adilforms/the-example-app.nodejs .
-        
-    docker push adilforms/the-example-app.nodejs   
-    '''
+ 
+   sh "echo 'publishing"
+sh "./docker_build_push.sh"
   }
 }
 }
