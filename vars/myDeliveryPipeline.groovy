@@ -1,4 +1,5 @@
 
+ def docker(load.Dockerfile)  
 def call(Map config) {
     pipeline {
         agent any
@@ -38,7 +39,7 @@ stage('Test'){
 }
     stage('Publish') {
   steps {
-      
+   docker()
     
     sh '''#!/bin/bash -el
     echo 'publishing'
