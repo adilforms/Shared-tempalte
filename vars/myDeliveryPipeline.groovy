@@ -4,6 +4,7 @@ def call(Map config) {
      agent {
       Docker {
        'node7' }
+     }
         
 stages {
 stage('Checkout'){
