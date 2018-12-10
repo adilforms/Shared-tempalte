@@ -7,8 +7,8 @@ stage('Checkout'){
   steps{
 
       checkout([$class: 'GitSCM',
-            branches: [[name: env.BRANCH_NAME]],
-           extensions: [[$class: 'CleanBeforeCheckout']], 
+            
+          extensions: [[$class: 'CleanBeforeCheckout']], 
                 commitID: [[version: env.GIT_COMMIT]]
                          
                         ])
