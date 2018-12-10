@@ -5,6 +5,7 @@ def call(Map config) {
 stage('Checkout'){
   
    checkout scm
+ commitId: env.GIT_COMMIT
 }
 stage('Build'){
 
@@ -21,7 +22,7 @@ stage('Publish') {
     try {
      if (environment ==' master') {
       sh 'echo master'
-      sh ' ehco env.BUILD_NUMBER'
+      sh ' echo env.BUILD_NUMBER'
      }
      }
      catch(e) {
@@ -29,7 +30,7 @@ stage('Publish') {
       throw e
      }
     finally {
-     echo 'env.REPO_URL'
+     env.BRANCH_NAME
      
     }
      
