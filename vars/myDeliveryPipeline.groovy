@@ -8,7 +8,7 @@ stage('Checkout'){
   steps{
       
    checkout scm
- env
+ env.$GIT_COMMIT
       
   }
 }
