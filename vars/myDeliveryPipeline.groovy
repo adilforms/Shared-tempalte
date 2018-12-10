@@ -6,7 +6,7 @@ stage('Checkout'){
   
    checkout scm
 
-sh ' git rev-parse HEAD"
+sh 'git rev-parse HEAD'
 }
 stage('Build'){
 
