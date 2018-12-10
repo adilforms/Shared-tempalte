@@ -23,22 +23,17 @@ stage('Publish') {
 sh '''#!/bin/bash -el
     echo 'publishing'
    version=$(git rev-parse --short HEAD)
-   branch=$(git branch | sed -n -e "s/^\* \(.*\)/\1/p")
+      
     
-    
-   docker build -t adilforms/the-example-app.nodejs.$version:$branch .
-   docker push adilforms/the-example-app.nodejs.$version:$branch
+   docker build -t adilforms/the-example-app.nodejs.$version:master .
+   docker push adilforms/the-example-app.nodejs.$version:master
    '''
    
 }
 
 }
 }
-def branch_to_environment(){
- [
-  master: 'master',
-  test: 'test'
-  ]
+
 }
 
 
