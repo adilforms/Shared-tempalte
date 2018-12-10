@@ -6,7 +6,7 @@ stage('Checkout'){
   
    checkout scm
  
-printenv
+sh 'printenv'
 
  sh 'git remote -v '
 }
