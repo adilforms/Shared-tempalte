@@ -6,7 +6,6 @@ stage('Checkout'){
   
    checkout scm
 
-sh 'git rev-parse --short HEAD'
  sh 'git remote -v '
 }
 stage('Build'){
@@ -18,34 +17,21 @@ stage('Build'){
 stage('Test'){ 
     echo 'version'  
 }
-stage('Publish') {  
- def environment = branch_to_environment()[env.BRANCH_NAME]
-   if(environment != null) {
-    try {
-     if (environment ==' master') {
-      sh 'echo master'
-      sh ' echo env.BUILD_NUMBER'
-     }
-     }
-     catch(e) {
-      sh 'echo failure'
-      throw e
-     }
-    finally {
-     env.BRANCH_NAME
+stage('Publish') { 
      
-    }
-     
-   }
-   /*
+   
+   
 sh '''#!/bin/bash -el
     echo 'publishing'
-   docker build -t adilforms/the-example-app.nodejs .
+   version=git rev-parse --short HEAD
+    
+    
+   docker build -t adilforms/the-example-app.nodejs.$version .
    docker push adilforms/the-example-app.nodejs  
    '''
-   */
-  
+   
 }
+
 }
 }
 def branch_to_environment(){
