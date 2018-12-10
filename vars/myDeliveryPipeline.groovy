@@ -30,8 +30,8 @@ stage('Test'){
 }
     stage('Publish') {
   steps {
-   def environmnet = branch_to_environment()[env.BRANCH_NAME]
-   if(environmnet != null) {
+   def environment = branch_to_environment()[env.BRANCH_NAME]
+   if(environment != null) {
     try {
      if (environment ==' master') {
       sh 'echo master'
