@@ -6,7 +6,7 @@ stage('Checkout'){
   
    checkout scm
  
-scm.GIT_BRANCH
+printenv
 
  sh 'git remote -v '
 }
