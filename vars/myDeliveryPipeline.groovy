@@ -1,10 +1,7 @@
 def call(Map config) {
     pipeline {
-        agent {
-            docker {
-                image 'node:7'
-            }
-        }
+        agent any
+        
 stages {
 stage('Checkout'){
   steps{
@@ -27,7 +24,7 @@ stage('Build'){
   }
 }
 stage('Test'){ steps {
-    echo 'Testing'
+  
     sh 'git rev-parse HEAD > .git/commit-id'
     def commit_id = readFile('.git/commit-id').trim()
     println commit_id
