@@ -8,7 +8,8 @@ stage('Checkout'){
 
       checkout([$class: 'GitSCM',
             branches: [[name: env.BRANCH_NAME]],
-           extensions: [[$class: 'CleanBeforeCheckout']], [[commitId: env.GIT_COMMIT]]
+           extensions: [[$class: 'CleanBeforeCheckout']], 
+                commitID: [[version: env.GIT_COMMIT]]
                          
                         ])
   /*
@@ -27,7 +28,7 @@ stage('Build'){
 stage('Test'){ 
     steps {
   
-    'commitId'
+    'version'
     
   
   }
