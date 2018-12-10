@@ -1,7 +1,6 @@
  
 def call(Map config) {
-    pipeline {
-     agent any
+ node('any'){
         
 stage('Checkout'){
   
@@ -45,7 +44,7 @@ sh '''#!/bin/bash -el
   
 }
 }
-}
+
 
 
 
