@@ -38,10 +38,14 @@ stage('Test'){
 }
     stage('Publish') {
   steps {
-      def dock() {
+      def dock(){
+          try {
     Map Dockerfile = read{file: "${WORKSPACE}/Dockerfile"
-                          
-    return Dockerfile
+                      return Dockerfile
+                         }
+              catch {
+                  exit(1);
+              }
 }
 
     
