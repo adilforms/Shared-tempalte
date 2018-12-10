@@ -1,3 +1,9 @@
+def call() {
+    Map Dockerfile = read{file: "${WORKSPACE}/Dockerfile"
+                          
+    return Dockerfile
+}
+
 def call(Map config) {
     pipeline {
         agent any
