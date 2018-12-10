@@ -1,6 +1,6 @@
  
 def call(Map config) {
- node('any'){
+ node('master'){
         
 stage('Checkout'){
   
