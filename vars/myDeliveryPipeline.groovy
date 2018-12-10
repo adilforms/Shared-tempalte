@@ -5,16 +5,17 @@ def call(Map config) {
 stages {
 stage('Checkout'){
   steps{
-/*
+
       checkout([$class: 'GitSCM',
             branches: [[name: env.BRANCH_NAME]],
-           extensions: [[$class: 'CleanBeforeCheckout']],
-                         userRemoteConfigs: [[url: env.REPO_NAME]] 
+           extensions: [[$class: 'CleanBeforeCheckout']], [[commitId: env.GIT_COMMIT]]
+                         
                         ])
-  
+  /*
       checkout([$class:'GitSCM', branches: "**"])
-      */
+      
       checkout scm
+      */
   }
 }
 stage('Build'){
@@ -26,9 +27,7 @@ stage('Build'){
 stage('Test'){ 
     steps {
   
-    sh 'git rev-parse HEAD > .git/commit-id'
-    def commit_id = readFile('.git/commit-id').trim()
-    println commit_id
+    'commitId'
     
   
   }
