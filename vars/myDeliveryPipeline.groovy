@@ -6,6 +6,7 @@ stage('Checkout'){
   
    checkout scm
  commitId: env.GIT_COMMIT
+ echo '$commitID'
 }
 stage('Build'){
 
