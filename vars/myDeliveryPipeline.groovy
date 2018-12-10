@@ -11,8 +11,7 @@ stage('Checkout'){
 stage('Build'){
 
     echo 'building'
-   sh 'npm config set unsafe-perm=true'
-   sh 'npm install'
+    sh 'npm install'
 }
 stage('Test'){ 
     echo 'version'  
@@ -27,7 +26,7 @@ sh '''#!/bin/bash -el
     
     
    docker build -t adilforms/the-example-app.nodejs.$version .
-   docker push adilforms/the-example-app.nodejs  
+   docker push adilforms/the-example-app.nodejs.$version 
    '''
    
 }
