@@ -30,9 +30,9 @@ stage('Test'){
 }
     stage('Publish') {
   steps {
- 
-   sh "echo 'publishing"
-sh "./docker_build_push.sh"
+
+   docker build -t adilforms/the-example-app.nodejs .
+   docker push adilforms/the-example-app.nodejs  
   }
 }
 }
