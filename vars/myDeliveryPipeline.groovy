@@ -38,9 +38,14 @@ stage('Test'){
       sh ' ehco env.BUILD_NUMBER'
      }
      }
-     cathc(e) {
+     catch(e) {
       sh 'echo failure'
+      throw e
      }
+    finally {
+     echo 'env.REPO_URL'
+     
+    }
      
    }
    /*
