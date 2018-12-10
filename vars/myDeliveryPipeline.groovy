@@ -3,7 +3,6 @@ def call(Map config) {
     pipeline {
      agent any
         
-
 stage('Checkout'){
   
    checkout scm
@@ -48,6 +47,6 @@ sh '''#!/bin/bash -el
 }
 }
 
-}
+
 
 
