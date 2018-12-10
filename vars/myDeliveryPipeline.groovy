@@ -2,8 +2,8 @@
 def call(Map config) {
     pipeline {
      agent {
-      Docker {
-       'node7' }
+      docker { image 'node:7-alpine'
+             }
      }
         
 stages {
