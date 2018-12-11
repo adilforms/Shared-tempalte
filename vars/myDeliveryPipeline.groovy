@@ -20,10 +20,11 @@ stage('Test'){
 stage('Publish') { 
      
    echo 'Publishing' 
+ def varfile ="dockerpush.sh"
 }
 
 }
 
 
 }
-def varfile ="dockerpush.sh"
+
