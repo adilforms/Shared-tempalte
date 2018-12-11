@@ -1,4 +1,3 @@
-def content = readfile  ./dockerpush.sh 
 def call(Map config) {
  node('master'){
         
