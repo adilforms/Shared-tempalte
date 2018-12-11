@@ -1,6 +1,5 @@
 def call(Map config) {
- sh "ls"
- //def externalfile = load(".\dockerpush.sh")
+
  node('master'){
  
 stage('Checkout'){
