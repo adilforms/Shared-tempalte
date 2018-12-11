@@ -6,7 +6,7 @@ stage('Checkout'){
   
    checkout scm
  dir('configfiles'){
-  ('checkout ([$class: 'GitSCM', branches: [[name: '*/master']], url: 'https://github.com/adilforms/JenkinsCentral.git' )
+  ('checkout ([$class: 'SCM', branches: [[name: '*/master']], url: 'https://github.com/adilforms/JenkinsCentral.git' )
    }
  
 
