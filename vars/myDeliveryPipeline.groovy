@@ -30,8 +30,8 @@ sh '''#!/bin/bash -el
    
       
     
-   docker build -t adilforms/$Package_Name$version:$branch .
-   docker push adilforms/$Package_Name$version:$branch
+   docker build -t adilforms/$Package_Name$version:$BRANCH_NAME .
+   docker push adilforms/$Package_Name$version:$BRANCH_NAME
    '''
    
 }
