@@ -26,7 +26,7 @@ sh '''#!/bin/bash -el
     echo 'publishing'
    version=$(git rev-parse --short HEAD)
    P_Name=$(echo $JOB_NAME | tr / -)
-   Package_Name=${P_Name//$BRANCH_NAME/'')
+   Package_Name=${P_Name//$BRANCH_NAME/''}
    
       
     
