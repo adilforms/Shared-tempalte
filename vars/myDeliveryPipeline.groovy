@@ -21,6 +21,7 @@ stage('Publish') {
      
    echo 'Publishing' 
  def varfile ="dockerpush.sh"
+ echo $varfile
 }
 
 }
