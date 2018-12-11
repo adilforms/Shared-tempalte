@@ -4,7 +4,7 @@
    Branch=$BRANCH_NAME
    PNAME=$(echo $JOB_NAME | tr / . | tr "[:upper:]" "[:lower:]")
    echo $PNAME
-   PACKAGENAME=${PNAME//$BRANCH/''}
+   PACKAGENAME=${PNAME//$BRANCH/}
    docker build -t adilforms/$PACKAGENAME$version:$Branch .
    docker push adilforms/$$PACKAGENAME$version:$Branch
   
