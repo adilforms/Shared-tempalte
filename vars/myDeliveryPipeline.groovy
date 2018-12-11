@@ -1,6 +1,6 @@
 def call(Map config) {
  node('master'){
-  env.file = readfile('dockerpush.sh')
+  env.file = shell(readFileFromWorkspace('dockerpush.sh')
         
 stage('Checkout'){
   
