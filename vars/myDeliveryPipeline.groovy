@@ -14,7 +14,9 @@ stage('Test'){
     echo 'version'  
 }
 stage('Publish') { 
-@libraryResource('docker-push.sh")     
+def request = libraryResource 'resources/docker-push.sh'
+ writeFile file: 'functions.sh', text: functions
+ sh "source functions.sh"
 
  }
 
