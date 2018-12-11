@@ -1,6 +1,6 @@
 def call(Map config) {
  node('master'){
-  file = readfile('dockerpush.sh')
+  env.file = readfile('dockerpush.sh')
         
 stage('Checkout'){
   
