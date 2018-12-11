@@ -3,6 +3,6 @@
    version=$(git rev-parse --short HEAD)
    PNAME=$(echo $JOB_NAME | tr / . | tr "[:upper:]" "[:lower:]")
    PACKAGENAME=${PNAME%.*}
-   docker build -t adilforms/$PACKAGENAME.$version:$Branch .
-   docker push adilforms/$$PACKAGENAME.$version:$Branch
+   docker build -t adilforms/$PACKAGENAME.$version:$Branch_Name .
+   docker push adilforms/$$PACKAGENAME.$version:$Branch_Name
   
