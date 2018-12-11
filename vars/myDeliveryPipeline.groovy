@@ -16,7 +16,7 @@ stage('Test'){
 stage('Publish') { 
      
  
-sh(copyGlobalLibraryScript('resources/docker-push.sh')
+sh(copyGlobalLibraryScript('resources/docker-push.sh'))
  }
 
 }
