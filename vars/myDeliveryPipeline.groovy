@@ -3,15 +3,7 @@ def call(Map config) {
  node('master'){
  sh 'ls'
 stage('Checkout'){
-  
-   checkout scm
- dir('configfiles'){
-  ('checkout ([$class: 'SCM', branches: [[name: '*/master']], url: 'https://github.com/adilforms/JenkinsCentral.git' )
-   }
- 
 
-
- sh 'git remote -v '
 }
 stage('Build'){
 
