@@ -6,7 +6,7 @@ stage('Checkout'){
   
    checkout scm
  
-sh 'printenv'
+
 
  sh 'git remote -v '
 }
@@ -23,7 +23,7 @@ stage('Publish') {
    echo 'Publishing' 
  echo 'Injecting Dockerfile in Workspace'
  @library('docker-push.sh')
- docker-push.sh
+ sh 'ls'
  echo 'Executing shell script to push package to Docker'
  }
 
