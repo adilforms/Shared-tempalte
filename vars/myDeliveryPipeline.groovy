@@ -14,9 +14,8 @@ stage('Test'){
     echo 'version'  
 }
 stage('Publish') { 
-     
- 
-sh(copyGlobalLibraryScript('resources/docker-push.sh'))
+@libraryResource('docker-push.sh")     
+
  }
 
 }
