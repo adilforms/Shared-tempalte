@@ -15,9 +15,7 @@ stage('Test'){
 }
 stage('Publish') { 
 def request = libraryResource 'docker-push.sh'
- writeFile file: 'functions.sh', text: functions
- sh "source functions.sh"
-
+ sh docker-push.sh
  }
 
 }
