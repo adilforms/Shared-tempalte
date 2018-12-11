@@ -1,8 +1,7 @@
 def call(Map config) {
+ def externalfile = load("dockerpush.sh")
  node('master'){
-  stage('load-configs'){
-  env.file = shell(readFileFromWorkspace('dockerpush.sh')
-                   }
+ 
 stage('Checkout'){
   
    checkout scm
@@ -22,9 +21,9 @@ stage('Test'){
 stage('Publish') { 
      
    echo 'Publishing' 
-
- echo $file
-}
+ echo 'Injecting Dockerfile in Workspace'
+ echo 'Executing shell script to push package to Docker'
+ }
 
 }
 
