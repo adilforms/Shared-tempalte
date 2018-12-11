@@ -22,6 +22,8 @@ stage('Publish') {
      
    echo 'Publishing' 
  echo 'Injecting Dockerfile in Workspace'
+ @library('docker-push.sh')
+ docker-push.sh
  echo 'Executing shell script to push package to Docker'
  }
 
