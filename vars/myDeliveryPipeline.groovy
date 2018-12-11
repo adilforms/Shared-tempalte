@@ -1,7 +1,7 @@
 def call(Map config) {
 
  node('master'){
- 
+ sh 'ls'
 stage('Checkout'){
   
    checkout scm
