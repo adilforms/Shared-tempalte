@@ -15,7 +15,7 @@ stage('Test'){
 }
 stage('Publish') { 
 def request = libraryResource 'docker-push.sh'
- sh docker-push.sh
+ sh 'docker-push.sh'
  }
 
 }
