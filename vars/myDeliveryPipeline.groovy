@@ -1,6 +1,7 @@
 def call(Map config) {
 
  node ('master'){
+  try{
  
 stage('Checkout'){
  checkout scm 
@@ -20,15 +21,18 @@ def request = libraryResource 'docker-push.sh'
  sh request
  }
   
-  stage('PostAction') {
+ 
+  }
+  catch{
+  echo 'catch'}
+  finally{
+   stage('PostAction') {
    echo "Cleaning Work Space"
     sh 'rm -rf *'
  
-        mail to: 'emad.syed@careerbuilder.com',
-             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-             body: "Something is wrong with $JOB_URL"
- 
- }
-
+       
+  }
+  
 }
+ }
 }
