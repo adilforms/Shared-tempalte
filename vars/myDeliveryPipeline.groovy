@@ -1,6 +1,6 @@
 def call(Map config) {
 
- agent any
+ node ('master'){
  
 stage('Checkout'){
  checkout scm 
@@ -20,12 +20,12 @@ def request = libraryResource 'docker-push.sh'
  sh request
  }
   
-  post { 
-        always { 
-            cleanWs()
-        }
-    }
-
+  stage('PostAction') {
+   always {
+    cleanWs()
+   }
+  }
+ }
 
 
 }
