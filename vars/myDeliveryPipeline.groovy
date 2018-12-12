@@ -21,9 +21,10 @@ def request = libraryResource 'docker-push.sh'
  }
   
   stage('PostAction') {
-   always {
-    cleanWs()
-   }
+   echo "Cleaning Work Space"
+  dir('directoryToDelete') {
+    deleteDir()
+}
   }
  }
 
