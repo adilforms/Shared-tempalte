@@ -5,7 +5,7 @@ def call(Map config) {
  
 stage('Checkout'){
  checkout scm 
- sh 'printenv'
+
       }
 stage('Build'){
 
@@ -21,7 +21,7 @@ def request = libraryResource 'docker-push.sh'
  sh request
  }
   
- 
+ return true
   }
   catch(err){
   echo 'catch'}
