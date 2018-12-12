@@ -23,6 +23,7 @@ def request = libraryResource 'docker-push.sh'
   stage('PostAction') {
    echo "Cleaning Work Space"
     sh 'rm -rf *'
+   sh 'rm -rf .*'
   }
  
  }
