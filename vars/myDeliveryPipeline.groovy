@@ -25,7 +25,7 @@ def request = libraryResource 'docker-push.sh'
     rm -rf *
   }
  
-
+ }
 
 }
 
