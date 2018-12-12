@@ -1,9 +1,10 @@
 def call(Map config) {
 
  node('master'){
+  stages{
 stage('Checkout'){
-
-}
+ checkout scm 
+      }
 stage('Build'){
 
     echo 'building'
@@ -18,7 +19,7 @@ stage('Publish') {
 def request = libraryResource 'docker-push.sh'
  sh request
  }
-
+  }
   post { 
         always { 
             cleanWs()
