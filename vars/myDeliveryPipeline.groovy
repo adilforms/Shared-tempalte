@@ -24,7 +24,7 @@ def request = libraryResource 'docker-push.sh'
    echo "Cleaning Work Space"
     rm -rf *
   }
- }
+ 
 
 
 }
