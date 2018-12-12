@@ -1,7 +1,6 @@
 def call(Map config) {
 
  node('master'){
- sh 'ls'
 stage('Checkout'){
 
 }
@@ -20,6 +19,11 @@ def request = libraryResource 'docker-push.sh'
  sh request
  }
 
+  post { 
+        always { 
+            cleanWs()
+        }
+    }
 }
 
 
