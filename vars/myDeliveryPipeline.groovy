@@ -22,9 +22,7 @@ def request = libraryResource 'docker-push.sh'
   
   stage('PostAction') {
    echo "Cleaning Work Space"
-  always {
-    cleanWS()
-}
+    rm -rf *
   }
  }
 
