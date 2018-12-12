@@ -26,7 +26,7 @@ def request = libraryResource 'docker-push.sh'
  
         mail to: 'emad.syed@careerbuilder.com',
              subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-             body: "Something is wrong with "
+             body: "Something is wrong with $JOB_URL"
  
  }
 
