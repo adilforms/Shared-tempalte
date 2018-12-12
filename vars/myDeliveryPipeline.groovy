@@ -4,7 +4,7 @@ def call(Map config) {
  
 stage('Checkout'){
  checkout scm 
- Printenv
+ sh 'Printenv'
       }
 stage('Build'){
 
