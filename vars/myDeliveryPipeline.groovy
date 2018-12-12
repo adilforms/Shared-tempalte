@@ -1,6 +1,6 @@
 def call(Map config) {
 
- node('master'){
+ agent any{
  
 stage('Checkout'){
  checkout scm 
