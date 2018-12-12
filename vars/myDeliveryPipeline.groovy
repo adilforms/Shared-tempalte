@@ -23,7 +23,7 @@ def request = libraryResource 'docker-push.sh'
   
  
   }
-  catch{
+  catch(err){
   echo 'catch'}
   finally{
    stage('PostAction') {
