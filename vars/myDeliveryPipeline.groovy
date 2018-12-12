@@ -15,7 +15,8 @@ stage('Test'){
 }
 stage('Publish') { 
  def file = libraryResource 'Dockerfile'
- sh "cp 'file' './Dockerfile' " 
+ //sh "cp 'file' './Dockerfile' " 
+ sh echo '$file'
 def request = libraryResource 'docker-push.sh'
  sh request
  }
