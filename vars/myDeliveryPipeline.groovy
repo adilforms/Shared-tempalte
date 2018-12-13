@@ -28,7 +28,9 @@ def request = libraryResource 'docker-push.sh'
  return true
   }
   catch(err){
-  echo 'catch'}
+  echo 'catch'
+  exit(1);
+  }
   finally{
    stage('PostAction') {
    echo "Cleaning Work Space"
