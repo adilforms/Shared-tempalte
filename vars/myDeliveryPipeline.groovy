@@ -4,7 +4,11 @@ def call(Map config) {
   try{
  
 stage('Checkout'){
- checkout scm 
+ checkout([$class: 'GitSCM',
+            branches: [[name: master]],
+           extensions: [[$class: 'CleanBeforeCheckout']],
+                         userRemoteConfigs: [[url: adilforms/REPO_NAME]] 
+                        ])
 
       }
 stage('Build'){
