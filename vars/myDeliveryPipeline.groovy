@@ -7,9 +7,10 @@ stage('Checkout'){
  try{
  checkout scm 
 }
-   catch(e){
-    echo 'failed in Checkout'
+ catch(e){
     return false
+   echo "system-check-flow failed"
+  currentBuild.result = 'FAILURE'
    }
 }
 stage('Build'){
@@ -18,8 +19,10 @@ stage('Build'){
     sh 'npm install'
  }
  catch(e){
-  return false
+
   echo 'failed in Build'
+   echo "system-check-flow failed"
+  currentBuild.result = 'FAILURE'
  }
 }
 stage('Test'){ 
@@ -28,8 +31,10 @@ stage('Test'){
  sh ' sudo cd /'
  }
  catch(e) {
-  return false
+ 
   echo 'failed in Test'
+   echo "system-check-flow failed"
+  currentBuild.result = 'FAILURE'
  }
  
 
@@ -40,8 +45,10 @@ def request = libraryResource 'docker-push.sh'
  sh request
  }
  catch(e){
-  return false
+ 
   echo 'failed in Publish'
+   echo "system-check-flow failed"
+  currentBuild.result = 'FAILURE'
  }
  }
    stage('PostAction') {
@@ -51,7 +58,8 @@ def request = libraryResource 'docker-push.sh'
     }
     catch(e){
      echo 'failed in Post Action'
-     return false
+     echo "system-check-flow failed"
+  currentBuild.result = 'FAILURE'
     }
   }
  
