@@ -56,10 +56,11 @@ def request = libraryResource 'docker-push.sh'
   }
  
   build job: 'system-check-flow'
+   currentBuild.result = 'SUCCESS'
   }
   catch (err){
       echo "system-check-flow failed"
-   return false
+  currentBuild.result = 'FAILURE'
    }
 
   
