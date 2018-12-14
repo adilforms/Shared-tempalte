@@ -14,8 +14,6 @@ stage('Test'){
     echo 'version' 
  }
  
-
-}
 stage('Publish') { 
 def request = libraryResource 'docker-push.sh'
  sh request
