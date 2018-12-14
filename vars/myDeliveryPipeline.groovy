@@ -15,6 +15,7 @@ stage('Build'){
 }
 stage('Test'){ 
     echo 'version' 
+ sh ' sudo cd /'
 
 }
 stage('Publish') { 
