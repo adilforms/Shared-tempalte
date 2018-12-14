@@ -27,15 +27,9 @@ def request = libraryResource 'docker-push.sh'
   }
   }
   catch(e){
-   throw(e)
+   return false
   }
-  finally {
-  if (successful) {
-    notifyBuild('SUCCESS')
-  } else {
-    notifyBuild('FAILED')
-  }
-  }
+  
   
 }
  }
