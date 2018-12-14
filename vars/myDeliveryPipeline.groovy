@@ -2,7 +2,7 @@ def call(Map config) {
 
  node ('master'){
   try{
-  
+   Stages{
 stage('Checkout'){
  checkout scm 
 }
@@ -25,6 +25,12 @@ stage('PostAction') {
    build job: 'system-check-flow'
    currentBuild.result = 'SUCCESS'
 
+   }
+ post { 
+   always { 
+      echo 'I will always say Hello again!'
+        }
+    }
   }
   catch (err){
       echo "system-check-flow failed"
