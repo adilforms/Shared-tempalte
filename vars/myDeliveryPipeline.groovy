@@ -23,10 +23,11 @@ stage('PostAction') {
     deleteDir()  
   }
    return true
+   echo "Success"
   
   }
   catch (err){
-      echo "system-check-flow failed"
+      echo "Failed"
    return false
    }
 
