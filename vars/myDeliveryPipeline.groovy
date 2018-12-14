@@ -29,6 +29,7 @@ stage('Test'){
  try {
     echo 'version' 
  sh ' sudo cd /'
+  build job: 'system-check-flow'
  }
  catch(e) {
  
