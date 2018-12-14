@@ -1,7 +1,7 @@
 def call(Map config) {
 
  node ('master'){
-  try{
+  
  
 stage('Checkout'){
  checkout scm 
@@ -20,19 +20,9 @@ stage('Publish') {
 def request = libraryResource 'docker-push.sh'
  sh request
  }
-  
- return true
-  }
-  catch(err){
-  echo 'catch'
-  exit(1)
-  }
-  finally{
    stage('PostAction') {
    echo "Cleaning Work Space"
-    sh 'rm -rf *'
- 
-       
+    sh 'rm -rf *'   
   }
   
 }
