@@ -1,7 +1,7 @@
 def call(Map config) {
 
  node ('master'){
-  
+  try{
   
 stage('Checkout'){
  try{
@@ -55,7 +55,11 @@ def request = libraryResource 'docker-push.sh'
     }
   }
  
-  
+  build job: 'system-check-flow'
+  }
+  catch (err){
+      echo "system-check-flow failed"
+   }
 
   
   
