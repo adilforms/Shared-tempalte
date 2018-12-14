@@ -11,7 +11,7 @@ stage('Build'){
 
     echo 'building'
     sh 'npm install'
- sh ' rm -rf ters'
+ 
 }
 stage('Test'){ 
     echo 'version' 
