@@ -59,6 +59,7 @@ def request = libraryResource 'docker-push.sh'
   }
   catch (err){
       echo "system-check-flow failed"
+   return false
    }
 
   
