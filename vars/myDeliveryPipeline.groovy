@@ -9,7 +9,7 @@ stage('Checkout'){
 stage('Build'){
     echo 'building'
     sh 'npm install'
- sh 'rm -rf fill"
+ sh 'rm -rf fill'
 }
 stage('Test'){ 
     echo 'version' 
