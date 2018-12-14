@@ -22,12 +22,12 @@ stage('PostAction') {
    echo "Cleaning Work Space"
     deleteDir()  
   }
-   build job: 'system-check-flow'
+   
   
   }
   catch (err){
       echo "system-check-flow failed"
-   currentBuild.result = 'FAILURE'
+   
    }
 
   
