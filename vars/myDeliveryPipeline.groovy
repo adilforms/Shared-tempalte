@@ -2,11 +2,11 @@ def call(Map config) {
 
  node ('master'){
   
- 
+  try {
 stage('Checkout'){
  checkout scm 
+}
 
-      }
 stage('Build'){
 
     echo 'building'
@@ -24,6 +24,16 @@ def request = libraryResource 'docker-push.sh'
    stage('PostAction') {
    echo "Cleaning Work Space"
     deleteDir()  
+  }
+  }
+  catch(e){
+   throw(e)
+  }
+  finally {
+  if (successful) {
+    notifyBuild('SUCCESS')
+  } else {
+    notifyBuild('FAILED')
   }
   
 }
