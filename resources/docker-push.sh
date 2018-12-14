@@ -6,3 +6,4 @@
    docker build -t adilforms/$PACKAGENAME.$version:$BRANCH_NAME .
    docker push adilforms/$PACKAGENAME.$version:$BRANCH_NAME
 
+adfasssssaf
