@@ -35,6 +35,7 @@ def request = libraryResource 'docker-push.sh'
   } else {
     notifyBuild('FAILED')
   }
+  }
   
 }
  }
