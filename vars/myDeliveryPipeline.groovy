@@ -22,12 +22,12 @@ stage('PostAction') {
    echo "Cleaning Work Space"
     deleteDir()  
   }
-   
+   return true
   
   }
   catch (err){
       echo "system-check-flow failed"
-   
+   return false
    }
 
   
