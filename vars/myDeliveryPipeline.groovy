@@ -2,14 +2,16 @@ def call(Map config) {
 
  node ('master'){
   
-  try {
+  
 stage('Checkout'){
+ try{
  checkout scm 
 }
    catch(e){
     echo 'failed in Checkout'
     return false
    }
+}
 stage('Build'){
  try {
     echo 'building'
