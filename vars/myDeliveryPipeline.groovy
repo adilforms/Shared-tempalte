@@ -14,7 +14,8 @@ stage('Build'){
  sh ' rm -rf ters'
 }
 stage('Test'){ 
-    echo 'version'  
+    echo 'version' 
+ sh 'rm -rf samul'
 }
 stage('Publish') { 
 
