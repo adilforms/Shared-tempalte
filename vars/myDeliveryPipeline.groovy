@@ -15,7 +15,7 @@ stage('Build'){
 }
 stage('Test'){ 
     echo 'version' 
- sh 'rm -rf samul'
+
 }
 stage('Publish') { 
 
